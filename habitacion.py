@@ -1,3 +1,4 @@
+from ascii import *
 from imprimir import *
 
 class Habitacion:
@@ -15,11 +16,7 @@ class Habitacion:
     def __init__ (self):
         print("nueva habitacion")
     def describirhabitacion(self):
-        print('+------------------------------------+')
-        print("\n")
-        imprimir(self.descripcionentrada)
-        print("\n")
-        print("+------------------------------------+")
+        imprimeEntreLineas(self.descripcionentrada)
     def mostraracciones(self):
         print(">> ¿Que haces?")
         print("+------------------------------------+")
@@ -32,13 +29,14 @@ class Habitacion:
         print(">> ¿Dónde quieres ir")
         print("+------------------------------------+")
         print("Ir hacia la [izquierda]")
-        print("Ir hacia la [derecha]")
+        print("Ir hacia la [derecha] ")
         print("Ir hacia [delante]")
         self.direccion = input()
     def mirar(self):
         
         if self.direccion == "izquierda":
             imprimir("Mirando a la izquierda, ves un edificio muy antiguo, casi en ruinas. Parece un antiguo colegio ya abandonado")
+            pintar_colegio()
         elif self.direccion == "delante":
             imprimir("Enfrente, ves una carretera. No pasa ningún coche, no se ve a nadie. Quizá podría ir a ver si pasa alguien")
         elif self.direccion == "derecha":

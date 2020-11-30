@@ -4,6 +4,7 @@ from personaje import *
 from batalla import *
 import partida
 from habitacion import *
+from habitaciones import *
 
 _=os.system("cls")
 
@@ -43,14 +44,16 @@ _=os.system("cls")
 personaje = Personaje(nombrePersonaje,clasePersonaje, 1)
 '''
 
-
-
-
-
-
+compienzoPartida = True
 
 while True:
-    hab = Habitacion()
+
+    if (compienzoPartida == True):
+        hab = Plaza()
+        compienzoPartida = False
+    else:
+        hab = Colegio()
+    
     hab.describirhabitacion()
     while hab.direccion != 'moverse':
         hab.mostraracciones()
