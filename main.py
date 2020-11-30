@@ -2,26 +2,24 @@ from constants import *
 import os
 from personaje import *
 from batalla import *
+import partida
+from habitacion import *
 
 _=os.system("cls")
 
 print("""\
-                                  ,'\
-    _.----.        ____         ,'  _\   ___    ___     ____
-_,-'       `.     |    |  /`.   \,-'    |   \  /   |   |    \  |`.
-\      __    \    '-.  | /   `.  ___    |    \/    |   '-.   \ |  |
- \.    \ \   |  __  |  |/    ,','_  `.  |          | __  |    \|  |
-   \    \/   /,' _`.|      ,' / / / /   |          ,' _`.|     |  |
-    \     ,-'/  /   \    ,'   | \/ / ,`.|         /  /   \  |     |
-     \    \ |   \_/  |   `-.  \    `'  /|  |    ||   \_/  | |\    |
-      \    \ \      /       `-.`.___,-' |  |\  /| \      /  | |   |
-       \    \ `.__,'|  |`-._    `|      |__| \/ |  `.__,'|  | |   |
-        \_.-'       |__|    `-._ |              '-.|     '-.| |   |
-                                `'                            '-._|
-
+______                                                   
+| ___ \                                                  
+| |_/ /__ _ _ __ ___   ___  _ __   __ _  ___  ___  _ __  
+|    // _` | '_ ` _ \ / _ \| '_ \ / _` |/ _ \/ _ \| '_ \ 
+| |\ \ (_| | | | | | | (_) | | | | (_| |  __/ (_) | | | |
+\_| \_\__,_|_| |_| |_|\___/|_| |_|\__, |\___|\___/|_| |_|
+                                   __/ |                 
+                                  |___/       
 
                     """)
 
+'''
 print("Elige un tipo de personaje:")
 print()
 
@@ -43,7 +41,22 @@ nombrePersonaje = input("Escribe un nombre para tu personaje: ")
 _=os.system("cls")
 
 personaje = Personaje(nombrePersonaje,clasePersonaje, 1)
+'''
 
+
+
+
+
+
+
+while True:
+    hab = Habitacion()
+    hab.describirhabitacion()
+    while hab.direccion != 'moverse':
+        hab.mostraracciones()
+        hab.mirar()
+    hab.moverse()
+    hab.tomardecision()
 
 enemigo = Personaje("Zombie", "monstruo", 4)
 
